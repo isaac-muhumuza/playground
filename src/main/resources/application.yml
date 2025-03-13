@@ -1,0 +1,51 @@
+spring:
+  config:
+    activate:
+      on-profile: service
+    #active: processor # Multiple profiles can be active at the same time
+  application:
+    name: demo
+
+# PostgreSQL connection
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+postgres:
+  url: jdbc:postgresql://localhost:5432/demoDB
+  jdbc_pass:
+  jdbc_user: postgres
+
+# MongoDB connection
+mongodb:
+  uri: mongodb://localhost:27017/demoDB
+  host: localhost
+  port: 27017
+  database: demoDB
+  user: root
+  password:
+
+---
+# Service mode
+spring:
+  config:
+    activate:
+      on-profile: service
+server:
+  port: 8080
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: processor
+server:
+  port: 18080
+
+---
+
