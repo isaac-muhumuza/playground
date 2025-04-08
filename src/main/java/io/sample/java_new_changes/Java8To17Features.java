@@ -31,6 +31,9 @@ import java.util.stream.Stream;
 /**
  * Java 8-17 changes:
  *  ------------------------------------------------ Java 9 ----------------------------------------------------------
+ *  - Interfaces can have private methods to be used within default methods.(common functionality)
+ *  - Create & initialise immutable collections via: List.of, Set.of, Map.of
+ *  - New Java HTTP client (java.net.http.HttpClient) (replaces HttpURLConnection) preview
  *  - Modular system (Project Jigsaw)
  *      - Are added via module-info.java file with the following structure:
  *          ```module <module_name> {
@@ -130,6 +133,7 @@ import java.util.stream.Stream;
  * <p>
 ------------------------------------------------ Java 17 ----------------------------------------------------------
  * - Sealed classes became a standard feature
+ * - compact strings - String is now stored as byte[] instead of char[] - better memory usaage & performance
  * - Always restrict floating point on all OS
  * - Enhanced pseudo-random number generators:
  *     - Different types of random number generators added
@@ -158,7 +162,7 @@ public class Java8To17Features {
     private static JavaHttpClient javaHttpClient = new JavaHttpClient();
 
     public static void main(String[] args) {
-        // private methods inside interfaces
+        // private methods inside interfaces Java9
         InterfaceFeatures privateMethodFeature = new InterfaceFeatures() {
         };
         var privateString = privateMethodFeature.printString();
