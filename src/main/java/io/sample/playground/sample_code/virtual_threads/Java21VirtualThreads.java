@@ -44,11 +44,11 @@ public class Java21VirtualThreads {
 
         IntStream.range(0, threadCount).forEach(i -> {
             // using virtual threads
-            Thread thread = Thread.ofVirtual().unstarted(() -> new ThreadTask().handleRequest());
+            /*Thread thread = Thread.ofVirtual().unstarted(() -> new ThreadTask().handleRequest());
             thread.setName("Thread-" + i);
             thread.start();
             log.info("Thread {} started", thread.getName());
-            workerThreads.add(thread);
+            workerThreads.add(thread);*/
         });
 
         workerThreads.forEach(thread -> {

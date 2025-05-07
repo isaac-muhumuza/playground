@@ -70,7 +70,7 @@ public class FolderStorageSizeInGCPBuckets {
         return bucketFolderSizes;
     }
 
-    private static long getTotalFilesSize(String directoryPrefix, Storage storage, String bucket) {
+    private long getTotalFilesSize(String directoryPrefix, Storage storage, String bucket) {
         AtomicLong totalFilesSize = new AtomicLong();
         Page<Blob> blobs =
                 storage.list(
