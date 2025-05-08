@@ -1,4 +1,4 @@
-package io.sample.playground.sample_tests.virtual_threads;
+package io.sample.java_new_changes.features.virtual_threads_java21;
 
 import lombok.extern.slf4j.Slf4j;
 

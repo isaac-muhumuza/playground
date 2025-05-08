@@ -1,4 +1,4 @@
-package io.sample.playground.service;
+package io.sample.playground.google_cloud_storage.bucket_file_size;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
